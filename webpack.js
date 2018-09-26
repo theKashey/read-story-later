@@ -19,6 +19,7 @@ class ReadStoryLaterPlugin {
     compiler.plugin('compilation', function (compilation) {
       compilation.moduleTemplate.plugin('render', function (moduleSource, module) {
         const source = new ConcatSource();
+        const moduleContent = moduleSource.source();
         const moduleId = module.identifier();
 
         if (moduleId && moduleId.match && moduleId.match(pattern) && moduleContent.indexOf('storiesOf') > 0) {
