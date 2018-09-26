@@ -9,7 +9,7 @@ const matchAll = (pattern, selected) => str => (
     }))
 );
 
-class ReadLaterPlugin {
+class ReadStoryLaterPlugin {
   constructor({pattern = /\.story\.(jsx?|tsx?)?$/} = {}) {
     this.pattern = pattern;
   }
@@ -44,4 +44,4 @@ if(${isNotValid} || !location.pathname.endsWith('iframe.html') || !query.selecte
   }
 }
 
-module.exports = ReadLaterPlugin;
+module.exports = { ReadStoryLaterPlugin };

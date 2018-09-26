@@ -1,11 +1,9 @@
 import { Plugin } from 'webpack';
 
-interface ContructorProps {
+export interface ReadStoryLaterPluginConstructorProps {
   pattern?: RegExp;
 }
 
-declare class ReadLaterPlugin extends Plugin {
-  constructor(opts: ContructorProps);
+export class ReadStoryLaterPlugin extends Plugin {
+  constructor(opts?: ReadStoryLaterPluginConstructorProps);
 }
-
-export = ReadLaterPlugin;

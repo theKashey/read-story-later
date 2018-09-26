@@ -4,7 +4,8 @@
   "description": "Defer story-pages execution until needed",
   "main": "index.js",
   "files": [
-    "webpack.js"
+    "webpack.js",
+    "webpack.d.ts"
   ],
   "repository": {
     "type": "git",
