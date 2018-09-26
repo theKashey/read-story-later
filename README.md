@@ -1,4 +1,7 @@
 # read-story-later
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/theKashey/read-story-later.svg)](https://greenkeeper.io/)
+
 Defer story-pages execution and isolate chapters
 
 ## How it works
