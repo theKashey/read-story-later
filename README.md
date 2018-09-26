@@ -32,5 +32,7 @@ module.exports = {
 }
 ```
 
+For optimal __performance__ use `devtool = 'eval'` mode. It will completely remove "parsing" of js.
+
 # License
 MIT
