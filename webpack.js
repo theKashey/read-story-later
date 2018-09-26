@@ -24,11 +24,13 @@ class ReadStoryLaterPlugin {
 
         if (moduleId && moduleId.match && moduleId.match(pattern) && moduleContent.indexOf('storiesOf') > 0) {
           const stories = [];
-          // `storiesOf('storyname',
+          // es5 storiesOf('storyname'
           stories.push(...matchAll(`storiesOf\\(['"]([^'^"]+)['"]`, 1)(moduleContent).map(({match}) => match));
-          // `Object(_storybook_react__WEBPACK_IMPORTED_MODULE_0__["storiesOf"])('storyname',
+          // webpack Object(_storybook_react__WEBPACK_IMPORTED_MODULE_0__["storiesOf"])('storyname',
           stories.push(...matchAll(`storiesOf['"]\\]\\)\\(['"]([^'^"]+)['"]`, 1)(moduleContent).map(({match}) => match));
-          // storiesOf)("storyname"
+          // webpack eval Object(_storybook_react__WEBPACK_IMPORTED_MODULE_0__[\"storiesOf\"])('
+          stories.push(...matchAll(`storiesOf\\\\['"]\\]\\)\\(['"]([^'^"]+)['"]`, 1)(moduleContent).map(({match}) => match));
+          // webpack prod storiesOf)("storyname"
           stories.push(...matchAll(`storiesOf\\)\\(['"]([^'^"]+)['"]`, 1)(moduleContent).map(({match}) => match));
 
           const isNotValid = stories.length === 0;
