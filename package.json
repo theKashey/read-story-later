@@ -1,6 +1,6 @@
 {
   "name": "read-story-later",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Defer story-pages execution until needed",
   "main": "index.js",
   "files": [
